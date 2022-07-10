@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" width="56" height="28"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z"%3E%3C/path%3E%3C/svg%3E');
+    /* background-size: cover; */
+    background-color: lightblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+.header {
+    grid-column:  1/ 13;
+    grid-row: 1 / 2;
+    /* background: yellow; */
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-columns: subgrid;
+
+}
+/* navigation styling - unversal acreoss the breakpoint */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+
+}
+nav li {
+    flex-basis: 48%;
+    margin-bottom: 0.5rem;
+
+}
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: rgb(12, 12, 12);
+    background-color: var(--color10);
+    display: block;
+    padding: 0.5rem ;
+    border-radius: 5px;
+    text-align: center;
+}
+nav li:first-child a {
+    background-color: transparent;
+}
+nav a:hover {
+    background-color: blue;
+    color: lightcoral;
+}
+.kichwa-date {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    /* background: wheat; */
+    color: rgb(5, 4, 4);
+    align-self: start;
+}
+.kichwa-quote {
+    grid-column: 11 / 13;
+    grid-row: 1 / 2;
+    /* background: rgb(38, 223, 146); */
+}
+.btn-header {
+    height: 100% ;
+    width: 100%;
+    padding:  0 2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgb(55, 143, 158);
+    color: #ffffff;
+    transition: all 0.3s;
+    
+}
+.content {
+    grid-column: 1/ 13;
+    grid-row: 2 / 12;
+    /* background: rgb(189, 226, 189); */
+    background: url(../img/craig-stevenson-Lrfeth2WaOo-unsplash\ \(1\).jpg);
+    background: cover;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+.footer-land {
+    grid-column: 1 / 13;
+    grid-row: 12 / 13;
+    /* background: rgb(128, 0, 60); */
+}
+.landing-h3{
+    grid-column: 2 / 6;
+    grid-row:2 / 3 ;
+    /* background: blueviolet; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.landing-h1{
+    grid-column: 2 / 7;
+    grid-row:3 / 5 ;
+    /* background: rgb(156, 226, 43); */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.landing-h6{
+    grid-column: 2 / 2;
+    grid-row:5 / 6 ;
+    /* background: rgb(92, 43, 226); */
+    justify-self: center;
+}
+.landing-btn{
+    grid-column: 2 / 5;
+    grid-row:6 / 7 ;
+    /* background: rgb(43, 226, 98); */
+}
+.btn-landing {
+    height: 100% ;
+    width: 100%;
+    padding:  0 2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgb(55, 143, 158);
+    color: #ffffff;
+    transition: all 0.3s;
+    
+}
+/* footer Styling */
+.footer {
+    background-color: pink;
+}
+footer {
+    padding: 3rem;
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+footer h4 {
+    margin-top: 0;
+}
+footer ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+footer li {
+    margin-right: 1rem;
+}
+footer address {
+    font-style: normal;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+/* ladning  section container styling */
+.landing-section {
+    grid-column: 1 / 13;
+    grid-row: 1 / 13;
+    background: url(../img/harshil-gudka-aKcVSSDotgo-unsplash.jpg) ;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+.landing-s-top {
+    grid-column: 1 / 3;
+    grid-row: 1/2;
+    background: white;
+}
+.landing-s-line {
+    grid-column: 1 / 2;
+    grid-row: 2/13;
+    background: white;
+}
+.landing-s-bot {
+    grid-column: 2 / 3;
+    grid-row: 12 /13;
+    background:white ;
+}
+.landing-s-bot-t {
+    grid-column: 3 / 4;
+    grid-row: 11 / 12;
+    background: rgba(0, 0, 0, 0.521) ;
+}
+.landing-s-cairo {
+    grid-column: 3/ 4 ;
+    grid-row: 4/ 5 ;
+    background: rgba(61, 93, 97, 0.247);
+}
+.landing-s-dar {
+    grid-column:  4 / 5;
+    grid-row: 5 / 6 ;
+    background: rgba(61, 93, 97, 0.247);
+}
+.landing-s-pot {
+    grid-column: 6 / 7 ;
+    grid-row: 1 / 2 ;
+    background: rgba(61, 93, 97, 0.247);
+}
+.landing-s-name {
+    grid-column: 5 / 7 ;
+    grid-row: 5 / 7 ;
+    background: white;
+}
+.landing-s-namez {
+    grid-column:6 / 7 ;
+    grid-row: 7 / 8;
+    background: rgba(61, 93, 97, 0.247);
+}
+.landing-s-uganda {
+    grid-column: 6 / 7 ;
+    grid-row: 11 / 12;
+    background: white;
+}
+.uganda {
+    text-align: center;
+}
+.landing-s-rwanda {
+    grid-column: 5 / 6 ;
+    grid-row: 12 / 13;
+    background: rgba(61, 93, 97, 0.247);
+}
+/* landing right is a child of landing section and a prent of 10 children  */
+.landing-s-right {
+    grid-column:7 / 13 ;
+    grid-row: 1 / 11;
+    background: white;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+/* ;anding right children styling starts here */
+.lr-top {
+    grid-column: 6 /7 ;
+    grid-row: 2 / 3;
+    background: rgb(55, 68, 87) ;
+}
+.lr-h1 {
+    grid-column: 2 / 5 ;
+    grid-row: 4 / 5;
+    background:  white;
+}
+.lr-h3 {
+    grid-column: 3 / 5 ;
+    grid-row:5 / 6 ;
+    background: white ;
+}
+.lr-tour {
+    grid-column:1 / 3 ;
+    grid-row: 5 / 7 ;
+    background: rgb(55, 68, 87) ;
+}
+.lr-date {
+    grid-column: 3 / 4 ;
+    grid-row:  6 / 7;
+    background: white;
+}
+.lr-p {
+    grid-column:2 / 5 ;
+    grid-row:7 / 8 ;
+    background: white;
+}
+/* .lr-cal {
+    grid-column: 1/ 5 ;
+    grid-row:11 / 12 ;
+    background: lightsalmon ;
+} */
+/* .lr-bot {
+    grid-column:5 / 6 ;
+    grid-row: 11 / 12;
+    background:  white;
+}
+.lr-bot2 {
+    grid-column: 6 / 7;
+    grid-row:  11 / 12;
+    background: brown;
+}
+.lr-bottom {
+    grid-column: 4 / 6 ;
+    grid-row: 12 / 13 ;
+    background:  bisque;
+} */
+
+/* ladning  section container styling */
+/* landing bottom cection */
+.landing-bt {
+    grid-column: 7 / 13;
+    grid-row: 11 / 13;
+    /* background: white; */
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+.bt-cal {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    background-color: white;
+}
+.bt-one {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    background-color: rgba(0, 255, 255, 0.048);
+}
+.bt-two {
+    grid-column: 6 / 7;
+    grid-row: 1 / 2;
+    background-color: rgba(230, 242, 245, 0.575);
+}
+.bt-white {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    background-color: white;
+}
+.bt-less {
+    grid-column: 4 / 6;
+    grid-row: 2 / 3;
+    background-color: transparent;
+}
+.bt-con {
+    grid-column: 6 / 7;
+    grid-row: 2 / 3;
+    background-color: white;
+}
+
+/* landing bottom cection */
+/* About us section  */
+.contact-landing {
+    grid-row: 1 / 13;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+.sema-sema {
+    grid-column: 4 / 9;
+    grid-row: 1 / 2;
+    background-color: blue;
+}
+.sema-form {
+    grid-column: 3 / 10;
+    grid-row: 3 / 9;
+    background: yellow;
+
+}
+.sema-fl {
+    grid-column: 2 / 3;
+    grid-row: 6 / 9;
+    background: rgb(0, 255, 179);
+
+}
+.sema-fr {
+    grid-column: 10 / 12;
+    grid-row: 6 / 9;
+    background: rgb(255, 0, 242);
+
+}
+.sema {
+    grid-column: 2 / 12;
+    grid-row: 9 / 13;
+    background: rgb(38, 0, 255);
+
+}
+/* About us section  */
